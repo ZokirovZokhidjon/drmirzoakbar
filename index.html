@@ -166,7 +166,13 @@
             gap: 12px;
             align-items: center;
         }
-
+        .nav-actions a{
+            text-align: center;
+            text-decoration: solid;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: white;
+            
+        }
         .btn {
             padding: 10px 20px;
             border-radius: 8px;
@@ -571,6 +577,19 @@
                 grid-template-columns: 1fr;
             }
         }
+        .consult-btn {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    line-height: 50px; /* Ёзувни вертикал марказга келтиради */
+    text-align: center;
+    text-decoration: none; /* tag'даги остига чизиқни ўчиради */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    background-color: #e85a24;
+    border-radius: 150px;
+    font-weight: bold;
+}
     </style>
 </head>
 
@@ -611,7 +630,8 @@
             <li><a href="#" onclick="openConsultationModal()" data-i18n="nav_consultation">Консультация</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="#appointment" class="btn btn-accent" onclick="openConsultationModal()" data-i18n="btn_appointment">Қабулга ёзилиш</a>
+            <button style="width: 180px; height: 50px; background-color: #e85a24; border-radius: 150px;">
+            <a href="https://t.me/drMirMuxamedov_bot" target="_blank" class="consult-btn">Қабулга ёзилиш</a>
         </div>
     </nav>
 
@@ -953,3 +973,4 @@
     </script>
 </body>
 </html>
+https://t.me/+jz5eFa_919dmYjVi
