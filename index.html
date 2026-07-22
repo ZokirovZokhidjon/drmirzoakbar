@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. MirMuxamedov MirzoAkbar — An'anaviy va Zamonaviy Tibbiyot Markazi</title>
+    <title data-i18n="meta_title">Dr. MirMuxamedov MirzoAkbar — An'anaviy va Zamonaviy Tibbiyot Markazi</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
@@ -35,6 +35,31 @@
         .logo-text { color: #1b4f4e; }
         .top-info-item, .top-info-item a, .top-phone { color: #333; }
         .nav-links a { color: #333; }
+
+        /* Тил танлаш тугмалари */
+        .lang-switcher {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+
+        .lang-btn {
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 5px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            transition: 0.2s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            background: #2b7a78;
+            color: #fff;
+            border-color: #2b7a78;
+        }
 
         /* Юқори информацион панель (Top bar) */
         .top-bar {
@@ -71,7 +96,7 @@
 
         .top-info-group {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -369,6 +394,7 @@
             font-size: 14px;
             font-weight: 500;
             transition: background 0.3s;
+            cursor: pointer;
         }
 
         .address-map-btn:hover {
@@ -559,51 +585,59 @@
         <div class="top-info-group">
             <div class="top-info-item">
                 <a onclick="openMapModal()" class="map-link">
-                    📍 Наманган шаҳри
+                    📍 <span data-i18n="city_name">Наманган шаҳри</span>
                 </a>
             </div>
             <div class="top-info-item">
-                <span>🕒 Душанба - Шанба: 09:00 - 18:00</span>
+                <span data-i18n="work_time">🕒 Душанба - Шанба: 09:00 - 18:00</span>
             </div>
             <a href="tel:+998902605266" class="top-phone">+998 (90) 260-52-66</a>
+            
+            <!-- Тил танлаш тугмалари -->
+            <div class="lang-switcher">
+                <button class="lang-btn active" onclick="changeLanguage('uz')">O‘z</button>
+                <button class="lang-btn" onclick="changeLanguage('ru')">Ру</button>
+                <button class="lang-btn" onclick="changeLanguage('en')">En</button>
+                <button class="lang-btn" onclick="changeLanguage('tr')">Tr</button>
+            </div>
         </div>
     </div>
 
     <!-- Навигация менюси -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="#">Бош саҳифа</a></li>
-            <li><a href="#services">Даволаш йўналишлари</a></li>
-            <li><a href="#" onclick="openConsultationModal()">Консультация</a></li>
+            <li><a href="#" data-i18n="nav_home">Бош саҳифа</a></li>
+            <li><a href="#services" data-i18n="nav_services">Даволаш йўналишлари</a></li>
+            <li><a href="#" onclick="openConsultationModal()" data-i18n="nav_consultation">Консультация</a></li>
         </ul>
         <div class="nav-actions">
-            <a href="#appointment" class="btn btn-accent" onclick="openConsultationModal()">Қабулга ёзилиш</a>
+            <a href="#appointment" class="btn btn-accent" onclick="openConsultationModal()" data-i18n="btn_appointment">Қабулга ёзилиш</a>
         </div>
     </nav>
 
     <div class="drz">
         <img src="drm.jpg" alt="Dr. MirzoAkbar MirMuxamedov" width="500" height="500">
-        <h2 style="color: #1b4f4e; margin-top: 10px; font-size: 22px;">Мирмуҳамедов Мирзоакбар ака</h2>
-        <p style="color: #555; font-size: 14px; margin-top: 5px;">Наманганлик машҳур врач академик <b>Муҳиддин Умаров</b>нинг шогирдлари</p>
-        <footer><p style="text-align: center; color: #ff6b35; font-family:Georgia, serif; font-size: 18px; margin-top: 10px;">Томирдан ташхис ва гиёҳлар билан шифо</p></footer>
+        <h2 style="color: #1b4f4e; margin-top: 10px; font-size: 22px;" data-i18n="doc_name">Мирмуҳамедов Мирзоакбар ака</h2>
+        <p style="color: #555; font-size: 14px; margin-top: 5px;" data-i18n="doc_desc">Наманганлик машҳур врач академик <b>Муҳиддин Умаров</b>нинг шогирдлари</p>
+        <footer><p style="text-align: center; color: #ff6b35; font-family:Georgia, serif; font-size: 18px; margin-top: 10px;" data-i18n="doc_quote">Томирдан ташхис ва гиёҳлар билан шифо</p></footer>
     </div>
 
     <!-- Асосий баннер (Hero Banner) -->
     <section class="hero-section">
         <div class="hero-content">
-            <h1>Анъанавий ва замонавий тиббиёт уйғунлиги</h1>
-            <p>Томирдан аниқ ташхис қўйиш, табий гиёҳлар ва илғор муолажа усуллари орқали саломатлигингизни тикланг.</p>
+            <h1 data-i18n="hero_title">Анъанавий ва замонавий тиббиёт уйғунлиги</h1>
+            <p data-i18n="hero_desc">Томирдан аниқ ташхис қўйиш, табий гиёҳлар ва илғор муолажа усуллари орқали саломатлигингизни тикланг.</p>
             <div class="hero-features">
-                <div class="hero-feature-item">✔ Тажрибали халқ ва замонавий табобат мутахассиси</div>
-                <div class="hero-feature-item">✔ Ноёб гиёҳлар ва инклюзив даволаш методикаси</div>
+                <div class="hero-feature-item" data-i18n="hero_feat1">✔ Тажрибали халқ ва замонавий табобат мутахассиси</div>
+                <div class="hero-feature-item" data-i18n="hero_feat2">✔ Ноёб гиёҳлар ва инклюзив даволаш методикаси</div>
             </div>
-            <button onclick="openConsultationModal()" class="btn btn-accent">Қабулга ёзилиш / Группага қўшилиш</button>
+            <button onclick="openConsultationModal()" class="btn btn-accent" data-i18n="hero_btn">Қабулга ёзилиш / Группага қўшилиш</button>
         </div>
 
         <div class="hero-visual">
             <div class="hero-stat-card">
-                <div class="hero-stat-number">Тажриба ва Ишонч</div>
-                <div class="hero-stat-label">Академик Муҳиддин Умаров мактаби шогирди</div>
+                <div class="hero-stat-number" data-i18n="stat_num">Тажриба ва Ишонч</div>
+                <div class="hero-stat-label" data-i18n="stat_lbl">Академик Муҳиддин Умаров мактаби шогирди</div>
             </div>
         </div>
     </section>
@@ -613,44 +647,44 @@
         <div class="container">
             <!-- Муолажа турлари -->
             <div class="card">
-                <h2>Даволаш услублари</h2>
+                <h2 data-i18n="card1_title">Даволаш услублари</h2>
                 <ul>
-                    <li>Томирдан ташхис қўйиш <span>Анъанавий</span></li>
-                    <li>Гиёҳлар билан даволаш <span>Табий</span></li>
-                    <li>Иглорефлексотерапия <span>Игна билан</span></li>
-                    <li>Психология ва парапсихология <span>Руҳий тикланиш</span></li>
+                    <li><span data-i18n="c1_item1">Томирдан ташхис қўйиш</span> <span data-i18n="c1_sub1">Анъанавий</span></li>
+                    <li><span data-i18n="c1_item2">Гиёҳлар билан даволаш</span> <span data-i18n="c1_sub2">Табий</span></li>
+                    <li><span data-i18n="c1_item3">Иглорефлексотерапия</span> <span data-i18n="c1_sub3">Игна билан</span></li>
+                    <li><span data-i18n="c1_item4">Психология ва парапсихология</span> <span data-i18n="c1_sub4">Руҳий тикланиш</span></li>
                 </ul>
             </div>
 
             <!-- Даволанадиган касалликлар -->
             <div class="card services-card">
-                <h2>Касалликларни оғир кўринишларини даволаш</h2>
+                <h2 data-i18n="card2_title">Касалликларни оғир кўринишларини даволаш</h2>
                 <ul>
-                    <li>Сахарли диабет</li>
-                    <li>Кардиологик касалликлар</li>
-                    <li>Жигар ва ўпка касалликлари</li>
-                    <li>Цирроз ва бошқа оғир хасталиклар</li>
+                    <li data-i18n="c2_item1">Сахарли диабет</li>
+                    <li data-i18n="c2_item2">Кардиологик касалликлар</li>
+                    <li data-i18n="c2_item3">Жигар ва ўпка касалликлари</li>
+                    <li data-i18n="c2_item4">Цирроз ва бошқа оғир хасталиклар</li>
                 </ul>
             </div>
 
             <!-- Устоз ва боғланиш -->
             <div class="card">
-                <h2>Қабул ва Маълумот</h2>
+                <h2 data-i18n="card3_title">Қабул ва Маълумот</h2>
                 <ul>
-                    <li>Мутахассис: <span>Мирзоакбар ака</span></li>
-                    <li>Боғланиш рақами: <span>+998 90 260-52-66</span></li>
-                    <li>Устози: <span>Академик Муҳиддин Умаров</span></li>
+                    <li><span data-i18n="c3_item1">Мутахассис:</span> <span>Мирзоакбар ака</span></li>
+                    <li><span data-i18n="c3_item2">Боғланиш рақами:</span> <span>+998 90 260-52-66</span></li>
+                    <li><span data-i18n="c3_item3">Устози:</span> <span data-i18n="c3_sub3">Академик Муҳиддин Умаров</span></li>
                 </ul>
-                <a href="https://t.me/+q8SbIRRx1ZAzOTI6" target="_blank" class="address-map-btn" style="display: block; text-align: center; margin-top: 20px; background: #25d366;">Telegram гуруҳга қўшилиш</a>
+                <a href="https://t.me/+q8SbIRRx1ZAzOTI6" target="_blank" class="address-map-btn" style="display: block; text-align: center; margin-top: 20px; background: #25d366;" data-i18n="telegram_btn">Telegram гуруҳга қўшилиш</a>
             </div>
 
             <!-- Манзил карточкаси -->
             <div class="card address-card">
-                <h2>Манзилимиз</h2>
+                <h2 data-i18n="card4_title">Манзилимиз</h2>
                 <div class="address-content">
-                    <p>Наманган шаҳри</p>
-                    <p>Устоз МирзоАкбар ака қабулига ёзилиш учун юқоридаги Telegram гуруҳ орқали ёки тўғридан-тўғри телефон рақамига мурожаат қилинг.</p>
-                    <a onclick="openMapModal()" class="address-map-btn">📍 Харитada кўриш</a>
+                    <p data-i18n="addr_p1">Наманган шаҳри</p>
+                    <p data-i18n="addr_p2">Устоз МирзоАкбар ака қабулига ёзилиш учун юқоридаги Telegram гуруҳ орқали ёки тўғридан-тўғри телефон рақамига мурожаат қилинг.</p>
+                    <a onclick="openMapModal()" class="address-map-btn" data-i18n="map_btn">📍 Харитada кўриш</a>
                 </div>
             </div>
         </div>
@@ -660,17 +694,17 @@
     <div class="modal-overlay" id="consultModal">
         <div class="consultation-modal">
             <button class="modal-close" onclick="closeConsultationModal()">&times;</button>
-            <h3>Қабулга ёзилиш / Мурожаат</h3>
+            <h3 data-i18n="modal_title">Қабулга ёзилиш / Мурожаат</h3>
             
             <div class="consult-card-options">
                 <a href="https://t.me/+q8SbIRRx1ZAzOTI6" target="_blank" class="consult-option-card">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.02-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.05-.78 4.1-1.79 6.84-2.97 8.21-3.55 3.91-1.66 4.72-1.95 5.25-1.96.12 0 .39.03.56.17.15.12.19.28.21.4-.01.06.01.32-.03.68z"/></svg>
-                    <span>Telegram гуруҳга кириш (Ёзилиш)</span>
+                    <span data-i18n="modal_tg">Telegram гуруҳга кириш (Ёзилиш)</span>
                 </a>
 
                 <a href="tel:+998902605266" class="consult-option-card phone">
                     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    <span>Телефон орқали (+998 90 260-52-66)</span>
+                    <span data-i18n="modal_phone">Телефон орқали (+998 90 260-52-66)</span>
                 </a>
             </div>
         </div>
@@ -680,7 +714,7 @@
     <div class="modal-overlay" id="mapModal">
         <div class="map-modal">
             <button class="modal-close" onclick="closeMapModal()">&times;</button>
-            <h3>Наманган шаҳри — Манзилимиз</h3>
+            <h3 data-i18n="map_modal_title">Наманган шаҳри — Манзилимиз</h3>
             <div class="map-container">
                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2162.9930465874827!2d71.69093447464822!3d41.03878277134625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb4b30e5ee4777%3A0xaf3a5fa25169ac75!2z0JzQuNGA0LfQvtCQ0LrQsdCw0YAg0KLQsNCx0LjQsQ!5e1!3m2!1sru!2s!4v1784649527258!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
@@ -689,11 +723,207 @@
 
     <!-- Футер -->
     <footer>
-        <p>&copy; 2026 Dr. MirzoAkbar MirMuxamedov. Барча ҳуқуқлар ҳимояланган.</p>
+        <p data-i18n="footer_text">&copy; 2026 Dr. MirzoAkbar MirMuxamedov. Барча ҳуқуқлар ҳимояланган.</p>
     </footer>
 
-    <!-- Скриптлар -->
+    <!-- Скриптлар ва Таржималар -->
     <script>
+        const translations = {
+            uz: {
+                meta_title: "Dr. MirMuxamedov MirzoAkbar — An'anaviy va Zamonaviy Tibbiyot Markazi",
+                city_name: "Наманган шаҳри",
+                work_time: "🕒 Душанба - Шанба: 09:00 - 18:00",
+                nav_home: "Бош саҳифа",
+                nav_services: "Даволаш йўналишлари",
+                nav_consultation: "Консультация",
+                btn_appointment: "Қабулга ёзилиш",
+                doc_name: "Мирмуҳамедов Мирзоакбар ака",
+                doc_desc: "Наманганлик машҳур врач академик <b>Муҳиддин Умаров</b>нинг шогирдлари",
+                doc_quote: "Томирдан ташхис ва гиёҳлар билан шифо",
+                hero_title: "Анъанавий ва замонавий тиббиёт уйғунлиги",
+                hero_desc: "Томирдан аниқ ташхис қўйиш, табий гиёҳлар ва илғор муолажа усуллари орқали саломатлигингизни тикланг.",
+                hero_feat1: "✔ Тажрибали халқ ва замонавий табобат мутахассиси",
+                hero_feat2: "✔ Ноёб гиёҳлар ва инклюзив даволаш методикаси",
+                hero_btn: "Қабулга ёзилиш / Группага қўшилиш",
+                stat_num: "Тажриба ва Ишонч",
+                stat_lbl: "Академик Муҳиддин Умаров мактаби шогирди",
+                card1_title: "Даволаш услублари",
+                c1_item1: "Томирдан ташхис қўйиш", c1_sub1: "Анъанавий",
+                c1_item2: "Гиёҳлар билан даволаш", c1_sub2: "Табий",
+                c1_item3: "Иглорефлексотерапия", c1_sub3: "Игна билан",
+                c1_item4: "Психология ва парапсихология", c1_sub4: "Руҳий тикланиш",
+                card2_title: "Касалликларни оғир кўринишларини даволаш",
+                c2_item1: "Сахарли диабет",
+                c2_item2: "Кардиологик касалликлар",
+                c2_item3: "Жигар ва ўпка касалликлари",
+                c2_item4: "Цирроз ва бошқа оғир хасталиклар",
+                card3_title: "Қабул ва Маълумот",
+                c3_item1: "Мутахассис:",
+                c3_item2: "Боғланиш рақами:",
+                c3_item3: "Устози:", c3_sub3: "Академик Муҳиддин Умаров",
+                telegram_btn: "Telegram гуруҳга қўшилиш",
+                card4_title: "Манзилимиз",
+                addr_p1: "Наманган шаҳри",
+                addr_p2: "Устоз МирзоАкбар ака қабулига ёзилиш учун юқоридаги Telegram гуруҳ орқали ёки тўғридан-тўғри телефон рақамига мурожаат қилинг.",
+                map_btn: "📍 Харитada кўриш",
+                modal_title: "Қабулга ёзилиш / Мурожаат",
+                modal_tg: "Telegram гуруҳга кириш (Ёзилиш)",
+                modal_phone: "Телефон орқали (+998 90 260-52-66)",
+                map_modal_title: "Наманган шаҳри — Манзилимиз",
+                footer_text: "&copy; 2026 Dr. MirzoAkbar MirMuxamedov. Барча ҳуқуқлар ҳимояланган."
+            },
+            ru: {
+                meta_title: "Др. Мирмухамедов Мирзоакбар — Центр Традиционной и Современной Медицины",
+                city_name: "г. Наманган",
+                work_time: "🕒 Понедельник - Суббота: 09:00 - 18:00",
+                nav_home: "Главная",
+                nav_services: "Направления лечения",
+                nav_consultation: "Консультация",
+                btn_appointment: "Записаться на прием",
+                doc_name: "Мирмухамедов Мирзоакбар",
+                doc_desc: "Ученик известного наманганского врача, академика <b>Мухиддина Умарова</b>",
+                doc_quote: "Диагностика по пульсу и исцеление травами",
+                hero_title: "Гармония традиционной и современной медицины",
+                hero_desc: "Восстановите свое здоровье с помощью точной пульсовой диагностики, натуральных трав и передовых методов лечения.",
+                hero_feat1: "✔ Опытный специалист народной и современной медицины",
+                hero_feat2: "✔ Уникальные травы и инклюзивные методики лечения",
+                hero_btn: "Записаться / Вступить в группу",
+                stat_num: "Опыт и Доверие",
+                stat_lbl: "Ученик школы академика Мухиддина Умарова",
+                card1_title: "Методы лечения",
+                c1_item1: "Пульсовая диагностика", c1_sub1: "Традиционная",
+                c1_item2: "Фитотерапия (травами)", c1_sub2: "Натуральная",
+                c1_item3: "Иглорефлексотерапия", c1_sub3: "Иглоукалывание",
+                c1_item4: "Психология и парапсихология", c1_sub4: "Духовное восстановление",
+                card2_title: "Лечение тяжелых форм заболеваний",
+                c2_item1: "Сахарный диабет",
+                c2_item2: "Кардиологические заболевания",
+                c2_item3: "Заболевания печени и легких",
+                c2_item4: "Цирроз и другие тяжелые недуги",
+                card3_title: "Прием и Информация",
+                c3_item1: "Специалист:",
+                c3_item2: "Контактный номер:",
+                c3_item3: "Учитель:", c3_sub3: "Академик Мухиддин Умаров",
+                telegram_btn: "Вступить в группу Telegram",
+                card4_title: "Наш адрес",
+                addr_p1: "Город Наманган",
+                addr_p2: "Для записи на прием к мастеру МирзоАкбару обращайтесь через Telegram-группу или по прямому телефону.",
+                map_btn: "📍 Посмотреть на карте",
+                modal_title: "Запись на прием / Связь",
+                modal_tg: "Войти в Telegram-группу (Запись)",
+                modal_phone: "По телефону (+998 90 260-52-66)",
+                map_modal_title: "Город Наманган — Наш адрес",
+                footer_text: "&copy; 2026 Dr. MirzoAkbar MirMuxamedov. Все права защищены."
+            },
+            en: {
+                meta_title: "Dr. MirMuxamedov MirzoAkbar — Traditional and Modern Medical Center",
+                city_name: "Namangan city",
+                work_time: "🕒 Monday - Saturday: 09:00 - 18:00",
+                nav_home: "Home",
+                nav_services: "Treatments",
+                nav_consultation: "Consultation",
+                btn_appointment: "Book an Appointment",
+                doc_name: "Mirmuhamedov Mirzoakbar",
+                doc_desc: "Disciple of the famous Namangan physician, academician <b>Muhiddin Umarov</b>",
+                doc_quote: "Pulse diagnosis and herbal healing",
+                hero_title: "Harmony of Traditional and Modern Medicine",
+                hero_desc: "Restore your health through precise pulse diagnostics, natural herbs, and advanced treatment methods.",
+                hero_feat1: "✔ Experienced traditional and modern medicine specialist",
+                hero_feat2: "✔ Unique herbs and inclusive treatment methodology",
+                hero_btn: "Book Appointment / Join Group",
+                stat_num: "Experience & Trust",
+                stat_lbl: "Disciple of Academician Muhiddin Umarov's school",
+                card1_title: "Treatment Methods",
+                c1_item1: "Pulse Diagnosis", c1_sub1: "Traditional",
+                c1_item2: "Herbal Treatment", c1_sub2: "Natural",
+                c1_item3: "Acupuncture", c1_sub3: "Needle therapy",
+                c1_item4: "Psychology & Parapsychology", c1_sub4: "Spiritual recovery",
+                card2_title: "Treatment of Severe Diseases",
+                c2_item1: "Diabetes Mellitus",
+                c2_item2: "Cardiological diseases",
+                c2_item3: "Liver and lung diseases",
+                c2_item4: "Cirrhosis and other severe conditions",
+                card3_title: "Reception & Information",
+                c3_item1: "Specialist:",
+                c3_item2: "Contact number:",
+                c3_item3: "Mentor:", c3_sub3: "Academician Muhiddin Umarov",
+                telegram_btn: "Join Telegram Group",
+                card4_title: "Our Address",
+                addr_p1: "Namangan city",
+                addr_p2: "To book an appointment with Master MirzoAkbar, please use the Telegram group above or call directly.",
+                map_btn: "📍 View on Map",
+                modal_title: "Appointment / Contact",
+                modal_tg: "Join Telegram Group (Booking)",
+                modal_phone: "By Phone (+998 90 260-52-66)",
+                map_modal_title: "Namangan City — Our Address",
+                footer_text: "&copy; 2026 Dr. MirzoAkbar MirMuxamedov. All rights reserved."
+            },
+            tr: {
+                meta_title: "Dr. MirMuxamedov MirzoAkbar — Geleneksel ve Modern Tıp Merkezi",
+                city_name: "Namangan şehri",
+                work_time: "🕒 Pazartesi - Cumartesi: 09:00 - 18:00",
+                nav_home: "Ana Sayfa",
+                nav_services: "Tedavi Yöntemleri",
+                nav_consultation: "Konsültasyon",
+                btn_appointment: "Randevu Al",
+                doc_name: "Mirmuhamedov Mirzoakbar",
+                doc_desc: "Namanganlı ünlü hekim akademisyen <b>Muhiddin Umarov</b>'un öğrencisi",
+                doc_quote: "Nabız teşhisi ve bitkisel şifa",
+                hero_title: "Geleneksel ve Modern Tıbbın Uyumu",
+                hero_desc: "Doğru nabız teşhisi, doğal bitkiler ve gelişmiş tedavi yöntemleriyle sağlığınızı yeniden kazanın.",
+                hero_feat1: "✔ Deneyimli halk ve modern tıp uzmanı",
+                hero_feat2: "✔ Eşsiz bitkiler ve kapsamlı tedavi metodolojisi",
+                hero_btn: "Randevu Al / Gruba Katıl",
+                stat_num: "Deneyim ve Güven",
+                stat_lbl: "Akademisyen Muhiddin Umarov ekolünün öğrencisi",
+                card1_title: "Tedavi Yöntemleri",
+                c1_item1: "Nabız Teşhisi", c1_sub1: "Geleneksel",
+                c1_item2: "Bitkisel Tedavi", c1_sub2: "Doğal",
+                c1_item3: "Akupunktur", c1_sub3: "İğne ile",
+                c1_item4: "Psikoloji ve Parapsikoloji", c1_sub4: "Ruhsal İyileşme",
+                card2_title: "Ağır Hastalıkların Tedavisi",
+                c2_item1: "Şeker Hastalığı (Diyabet)",
+                c2_item2: "Kardiyolojik hastalıklar",
+                c2_item3: "Karaciğer ve akciğer hastalıkları",
+                c2_item4: "Siroz ve diğer ağır rahatsızlıklar",
+                card3_title: "Kabul ve Bilgi",
+                c3_item1: "Uzman:",
+                c3_item2: "İletişim Numarası:",
+                c3_item3: "Üstadı:", c3_sub3: "Akademisyen Muhiddin Umarov",
+                telegram_btn: "Telegram Grubuna Katıl",
+                card4_title: "Adresimiz",
+                addr_p1: "Namangan şehri",
+                addr_p2: "Usta MirzoAkbar'ın kabulüne randevu almak için yukarıdaki Telegram grubu üzerinden ya da doğrudan telefon numarasından ulaşabilirsiniz.",
+                map_btn: "📍 Haritada Gör",
+                modal_title: "Randevu Al / İletişim",
+                modal_tg: "Telegram Grubuna Katıl (Randevu)",
+                modal_phone: "Telefon İle (+998 90 260-52-66)",
+                map_modal_title: "Namangan Şehri — Adresimiz",
+                footer_text: "&copy; 2026 Dr. MirzoAkbar MirMuxamedov. Tüm hakları saklıdır."
+            }
+        };
+
+        function changeLanguage(lang) {
+            // Faol tugma holatini o'zgartirish
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // HTML til atributini yangilash
+            document.documentElement.lang = lang;
+
+            // Barcha tarjima qilinadigan elementlarni topib qiymatini o'zgartirish
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+        }
+
+        // Modal oynalar uchun funksiyalar
         function openConsultationModal() {
             document.getElementById('consultModal').style.display = 'flex';
         }
